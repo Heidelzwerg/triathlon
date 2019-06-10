@@ -18,11 +18,10 @@
   <img src="../assets/SportartenK.gif" style="width:30%">
   <img src="../assets/Strecke.jpg" style="width:30%">
   <br>
-  <button type="button" class="btn btn-primary" (click)="displayMode=single">Anmeldung Einzelstarter</button>
-  <button type="button" class="btn btn-primary" (click)="displayMode=single">Anmeldung Staffel</button>
-  <button type="button" class="btn btn-primary" (click)="displayMode=single">Anmeldestand</button>
+  <button type="button" class="btn btn-primary" (click)='displayMode="single"'>Anmeldung Einzelstarter</button>
+  <button type="button" class="btn btn-primary" (click)='displayMode="multiple"'>Anmeldung Staffel</button>
+  <button type="button" class="btn btn-primary" (click)='displayMode="anmeldestand"'>Anmeldestand</button>
   
-  <h2> Einzelstarter</h2>
 </div>
 
 <div *ngIf='(displayMode === "single")'>
@@ -35,98 +34,9 @@
   <app-anmeldestand></app-anmeldestand>
 </div>
 
-  
-
-	
-    <form action="select.htm">
-      <p>Geschlecht:
-      
-        <select name="egal" [(ngModel)]="newGeschlecht" >
-          <option value="m">männlich</option>
-          <option value="w">weiblich</option>       
-        </select>
-    </form>
-  
-	<form action="select.htm">
-		<p>Klasse:
-		
-			<select name="egal" [(ngModel)]="newStufe" >
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="J1">J1</option>
-				<option value="J2">J2</option>
-        <option value="Lehrer/in">Lehrer/in</option>
-        <option value="Extern">Extern</option>
-			</select>
-    
-      <select name="egal" [(ngModel)]="newSchulart" >
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-    
-      <select name="egal" [(ngModel)]="newKlasse" >
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
-	</form>
 
 
-<p></p>
-<button type="button" class="btn btn-primary" (click)="addParticipant()">Anmeldung Einzelstarter</button>
 
-<h2>Staffeln</h2>
-<input type="text" [(ngModel)]="newVornameSchwimmer" placeholder="Vorname Schwimmer" >
-<input type="text" [(ngModel)]="newVornameRadfahrer" placeholder="Vorname Radfahrer" >
-<input type="text" [(ngModel)]="newVornameLaeufer" placeholder="Vorname Läufer" >
- 
-<br> <p></p>
-<input type="text" [(ngModel)]="newNachnameSchwimmer" placeholder="Nachname Schwimmer" > 
-<input type="text" [(ngModel)]="newNachnameRadfahrer" placeholder="Nachname Radfahrer" >	
-<input type="text" [(ngModel)]="newNachnameLaeufer" placeholder="Nachname Läufer" >
-<p></p>
-
-<form action="select.htm">
-  <p>Wertungskategorie:
-  
-    <select name="egal" [(ngModel)]="newGeschlechtStaffel" >
-      <option value="m">mindestens ein männlicher Teilnehmer</option>
-      <option value="w">nur weibliche Teilnehmerinnen</option>       
-    </select>
-</form>
-
-<form action="select.htm">
-  <p>KLassenstufe:
-  
-    <select name="egal" [(ngModel)]="newKlassenStufeStaffel" >
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="J1">J1</option>
-      <option value="J2">J2</option>
-      <option value="Lehrer/innen">Lehrer/in</option>
-      <option value="Externe">Extern</option>
-    </select>
-</form>
-
-<h1>Teilnehmer:</h1>
-
-<div *ngFor="let p of einzelStarter">
- 
-   {{p.vorName}} {{p.nachName}}, {{p.geschlecht}}, 
-   Klasse: {{p.stufe}}.{{p.schulart}}.{{p.klasse}}
-   <br>
-
-</div>
 
 <router-outlet></router-outlet>
 </div>

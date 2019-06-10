@@ -46,7 +46,6 @@ export class EinzelanmeldungComponent implements OnInit {
       schulart: this.newSchulart,
       klasse: this.newKlasse
     })  
-    //alert(JSON.stringify(this.participants))
   }
 
 

@@ -1,3 +1,37 @@
-<p>
-  staffelanmeldung works!
-</p>
+
+<h2>Staffeln</h2>
+<input type="text" [(ngModel)]="newVornameSchwimmer" placeholder="Vorname Schwimmer" >
+<input type="text" [(ngModel)]="newVornameRadfahrer" placeholder="Vorname Radfahrer" >
+<input type="text" [(ngModel)]="newVornameLaeufer" placeholder="Vorname Läufer" >
+ 
+<br> 
+<input type="text" [(ngModel)]="newNachnameSchwimmer" placeholder="Nachname Schwimmer" > 
+<input type="text" [(ngModel)]="newNachnameRadfahrer" placeholder="Nachname Radfahrer" >	
+<input type="text" [(ngModel)]="newNachnameLaeufer" placeholder="Nachname Läufer" >
+
+
+<form action="select.htm">
+  <p>Wertungskategorie:
+  
+    <select name="egal" [(ngModel)]="newGeschlechtStaffel" >
+      <option value="m">mindestens ein männlicher Teilnehmer</option>
+      <option value="w">nur weibliche Teilnehmerinnen</option>       
+    </select>
+</form>
+
+<form action="select.htm">
+  <p>KLassenstufe:
+  
+    <select name="egal" [(ngModel)]="newKlassenStufeStaffel" >
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="J1">J1</option>
+      <option value="J2">J2</option>
+      <option value="Lehrer/innen">Lehrer/in</option>
+      <option value="Externe">Extern</option>
+    </select>
+</form>

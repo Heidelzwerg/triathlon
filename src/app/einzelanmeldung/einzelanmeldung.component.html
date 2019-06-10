@@ -1,6 +1,58 @@
-<p>
     
-<!--<input type="text" [(ngModel)]="newVorName" placeholder="Vorname" focused> <br></p>-->
-<input type="text" [(ngModel)]="newVorName" placeholder="Vorname" focused> <br>
-<input type="text" [(ngModel)]="newNachName" placeholder="Nachname" > <br> 
-</p>
+  <h2> Einzelstarter</h2>
+  <input type="text" [(ngModel)]="newVorName" placeholder="Vorname" focused> <br>
+  <input type="text" [(ngModel)]="newNachName" placeholder="Nachname" > <br> 
+  
+  
+  <form action="select.htm">
+    <p>Geschlecht:
+    
+      <select name="egal" [(ngModel)]="newGeschlecht" >
+        <option value="m">männlich</option>
+        <option value="w">weiblich</option>       
+      </select>
+  </form>
+  
+  <form action="select.htm">
+  <p>Klasse:
+  
+    <select name="egal" [(ngModel)]="newStufe" >
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="J1">J1</option>
+      <option value="J2">J2</option>
+      <option value="Lehrer/in">Lehrer/in</option>
+      <option value="Extern">Extern</option>
+    </select>
+  
+    <select name="egal" [(ngModel)]="newSchulart" >
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+  
+    <select name="egal" [(ngModel)]="newKlasse" >
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+
+  </form>
+
+  <button type="button" class="btn btn-primary" (click)="addParticipant()">Anmeldung Einzelstarter</button>
+
+  
+<div *ngFor="let p of einzelStarter">
+ 
+  {{p.vorName}} {{p.nachName}}, {{p.geschlecht}}, 
+  Klasse: {{p.stufe}}.{{p.schulart}}.{{p.klasse}}
+  <br>
+<a href="mailto:michael@spengler.biz&subject=Neue Anmeldung&body=Neue Anmeldung">Daten Bestätigen</a>
+  <button type="button" class="btn btn-primary" (click)="document.location='mailto:michael@spengler.biz'">Daten Bestätigen</button>
+
+</div>

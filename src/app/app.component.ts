@@ -39,7 +39,7 @@ export class AppComponent {
   newGeschlechtStaffel =""
   newKlassenStufeStaffel=""
 
-  displayMode = "single"
+  displayMode = ""
 
   staffeln: IStaffel[] = []
 
